@@ -1,0 +1,26 @@
+#include <Servo.h>
+Servo dms
+
+#define CH5 6
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(CH5, INPUT);
+  dms.attach(9);
+
+}
+
+void loop() {
+
+  if(digitalRead(CH5)>1500&&digitalRead(CH5)<=2000)
+     {
+      dms.write(90);
+      
+     }
+  else
+  {
+    dms.write(0);
+    
+  }
+
+}
